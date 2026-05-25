@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kavya Bellamkonda | Web Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Kavya Bellamkonda — Computer Science undergraduate and web developer. Education, skills, projects, certifications, and contact."
+    />
+    <meta name="theme-color" content="#070816" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="./" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Kavya Bellamkonda | Portfolio" />
+    <meta
+      property="og:description"
+      content="Modern responsive portfolio — projects, skills, certifications, resume, and contact."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="./" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS (Scroll Animations) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader" aria-live="polite" aria-busy="true">
+      <div class="loader__inner">
+        <div class="loader__ring" aria-hidden="true"></div>
+        <div class="loader__text">
+          <span class="loader__brand">Kavya</span>
+          <span class="loader__sub">Loading portfolio…</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background Effects -->
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob blob--a"></span>
+      <span class="blob blob--b"></span>
+      <span class="blob blob--c"></span>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header" id="top">
+      <nav class="nav container" aria-label="Primary">
+        <a class="nav__brand" href="#home" aria-label="Go to home">
+          <span class="nav__brandMark" aria-hidden="true">KB</span>
+          <span class="nav__brandText">Kavya Bellamkonda</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" type="button" aria-controls="navMenu" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav__bar" aria-hidden="true"></span>
+          <span class="nav__bar" aria-hidden="true"></span>
+          <span class="nav__bar" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav__menu" id="navMenu">
+          <a class="nav__link" href="#home">Home</a>
+          <a class="nav__link" href="#about">About</a>
+          <a class="nav__link" href="#skills">Skills</a>
+          <a class="nav__link" href="#projects">Projects</a>
+          <a class="nav__link" href="#certifications">Certifications</a>
+          <a class="nav__link" href="#resume">Resume</a>
+          <a class="nav__link nav__link--cta" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero container" id="home" aria-label="Hero section">
+        <div class="hero__grid">
+          <div class="hero__content" data-aos="fade-up" data-aos-delay="50">
+            <p class="hero__eyebrow">Hello, I’m</p>
+            <h1 class="hero__title">
+              <span class="hero__name">Kavya Bellamkonda</span>
+            </h1>
+            <p class="hero__role">
+              <span class="typing" id="typing" aria-label="Role"></span>
+              <span class="typing__cursor" aria-hidden="true"></span>
+            </p>
+            <p class="hero__tagline">
+              Passionate about building responsive and interactive web experiences.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#projects">
+                <span>View Projects</span>
+                <span class="btn__glow" aria-hidden="true"></span>
+              </a>
+              <a
+                class="btn btn--ghost resume-download"
+                href="assets/resume/Bellamkonda_Kavya_Resume.pdf"
+                download="Bellamkonda_Kavya_Resume.pdf"
+              >
+                <span>Download Resume</span>
+              </a>
+            </div>
+
+            <div class="social" aria-label="Social links">
+              <a
+                class="social__link"
+                href="https://github.com/Bellamkondakavya"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 .5C5.73.5.75 5.7.75 12.15c0 5.2 3.44 9.6 8.2 11.16.6.12.82-.27.82-.6v-2.2c-3.34.76-4.04-1.48-4.04-1.48-.54-1.42-1.32-1.8-1.32-1.8-1.08-.76.08-.75.08-.75 1.2.09 1.83 1.28 1.83 1.28 1.06 1.88 2.78 1.34 3.46 1.03.11-.8.41-1.34.75-1.65-2.66-.32-5.46-1.37-5.46-6.1 0-1.35.46-2.45 1.22-3.32-.12-.32-.53-1.6.12-3.33 0 0 1-.33 3.3 1.27.96-.28 1.99-.42 3.02-.42 1.03 0 2.06.14 3.02.42 2.3-1.6 3.3-1.27 3.3-1.27.65 1.73.24 3.01.12 3.33.76.87 1.22 1.97 1.22 3.32 0 4.74-2.8 5.78-5.47 6.1.42.38.8 1.13.8 2.28v3.38c0 .34.22.73.83.6 4.75-1.56 8.19-5.96 8.19-11.16C23.25 5.7 18.27.5 12 .5Z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="social__link"
+                href="https://www.linkedin.com/in/bellamkonda-kavya-9893792b7"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 23.5h4V7.98h-4V23.5ZM8.5 7.98h3.83v2.12h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v9.36h-4v-8.3c0-1.98-.04-4.52-2.76-4.52-2.76 0-3.18 2.16-3.18 4.39v8.43h-4V7.98Z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="social__link"
+                href="mailto:bellamkondakavya51@gmail.com"
+                aria-label="Email bellamkondakavya51@gmail.com"
+                title="Email"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path
+                    d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="social__link"
+                href="tel:+918712104187"
+                aria-label="Call +91 8712104187"
+                title="Call"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.68-.36 1.04-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35-.03.74-.25 1.02l-2.2 2.2z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__cardWrap" data-aos="fade-up" data-aos-delay="150">
+            <article class="profileCard" aria-label="Profile card">
+              <div class="profileCard__shine" aria-hidden="true"></div>
+              <div class="profileCard__top">
+                <div class="avatar" aria-hidden="true">
+                  <img src="assets/images/profile-placeholder.svg" alt="" />
+                </div>
+                <div class="profileCard__meta">
+                  <h2 class="profileCard__name">Kavya Bellamkonda</h2>
+                  <p class="profileCard__sub">Web Developer • CS Undergrad</p>
+                </div>
+              </div>
+              <div class="profileCard__stats" aria-label="Quick highlights">
+                <div class="stat">
+                  <span class="stat__kpi">8.2</span>
+                  <span class="stat__label">CGPA</span>
+                </div>
+                <div class="stat">
+                  <span class="stat__kpi">2+</span>
+                  <span class="stat__label">Projects</span>
+                </div>
+                <div class="stat">
+                  <span class="stat__kpi">Web</span>
+                  <span class="stat__label">Focus</span>
+                </div>
+              </div>
+              <div class="profileCard__chips">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">React</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section container" id="about" aria-label="About section">
+        <div class="section__head" data-aos="fade-up">
+          <h2 class="section__title">About</h2>
+          <p class="section__subtitle">A quick snapshot of who I am.</p>
+        </div>
+
+        <div class="aboutGrid">
+          <div class="glassCard aboutCard" data-aos="fade-up" data-aos-delay="50">
+            <h3 class="cardTitle">Career Objective</h3>
+            <p class="muted">
+              Motivated Computer Science undergraduate with a strong academic background and practical exposure through
+              academic projects. Experienced in working on web-based solutions and committed to applying knowledge in
+              real-world environments.
+            </p>
+            <p class="muted">
+              Dedicated to building a strong professional foundation by embracing challenges, learning from real-world
+              experiences, and supporting organizational success.
+            </p>
+            <div class="aboutBadges">
+              <span class="badge">Web-based Solutions</span>
+              <span class="badge">Responsive Design</span>
+              <span class="badge">Problem Solving</span>
+            </div>
+          </div>
+
+          <div class="glassCard aboutVisual" data-aos="fade-up" data-aos-delay="150">
+            <img src="assets/images/about-visual.svg" alt="Neon abstract illustration" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section container" id="skills" aria-label="Skills section">
+        <div class="section__head" data-aos="fade-up">
+          <h2 class="section__title">Skills</h2>
+          <p class="section__subtitle">Technologies I use and strengths I bring.</p>
+        </div>
+
+        <div class="skillsGrid">
+          <article class="glassCard" data-aos="fade-up" data-aos-delay="50">
+            <h3 class="cardTitle">Technical Skills</h3>
+            <div class="skillBars" aria-label="Technical skill levels">
+              <div class="skillBar">
+                <div class="skillBar__top"><span>HTML5</span><span>90%</span></div>
+                <div class="skillBar__track"><span class="skillBar__fill" style="--w: 90%"></span></div>
+              </div>
+              <div class="skillBar">
+                <div class="skillBar__top"><span>CSS3</span><span>88%</span></div>
+                <div class="skillBar__track"><span class="skillBar__fill" style="--w: 88%"></span></div>
+              </div>
+              <div class="skillBar">
+                <div class="skillBar__top"><span>JavaScript</span><span>82%</span></div>
+                <div class="skillBar__track"><span class="skillBar__fill" style="--w: 82%"></span></div>
+              </div>
+              <div class="skillBar">
+                <div class="skillBar__top"><span>React JS</span><span>80%</span></div>
+                <div class="skillBar__track"><span class="skillBar__fill" style="--w: 80%"></span></div>
+              </div>
+              <div class="skillBar">
+                <div class="skillBar__top"><span>Python</span><span>90%</span></div>
+                <div class="skillBar__track"><span class="skillBar__fill" style="--w: 90%"></span></div>
+              </div>
+              <div class="skillBar">
+                <div class="skillBar__top"><span>SQL</span><span>68%</span></div>
+                <div class="skillBar__track"><span class="skillBar__fill" style="--w: 68%"></span></div>
+              </div>
+              <div class="skillBar">
+                <div class="skillBar__top"><span>C Programming</span><span>65%</span></div>
+                <div class="skillBar__track"><span class="skillBar__fill" style="--w: 65%"></span></div>
+              </div>
+              <div class="skillBar">
+                <div class="skillBar__top"><span>Basics of Java</span><span>60%</span></div>
+                <div class="skillBar__track"><span class="skillBar__fill" style="--w: 60%"></span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="glassCard" data-aos="fade-up" data-aos-delay="120">
+            <h3 class="cardTitle">Soft Skills & Languages</h3>
+            <div class="softSkills" aria-label="Soft skills">
+              <div class="skillChip">
+                <span class="skillChip__dot" aria-hidden="true"></span>
+                <span>Problem Solving</span>
+              </div>
+              <div class="skillChip">
+                <span class="skillChip__dot" aria-hidden="true"></span>
+                <span>Time Management</span>
+              </div>
+              <div class="skillChip">
+                <span class="skillChip__dot" aria-hidden="true"></span>
+                <span>Team Collaboration</span>
+              </div>
+              <div class="skillChip">
+                <span class="skillChip__dot" aria-hidden="true"></span>
+                <span>Languages: English, Telugu, Hindi</span>
+              </div>
+            </div>
+
+            <div class="miniCards" aria-label="Highlights">
+              <div class="miniCard">
+                <p class="miniCard__kpi">Web UX</p>
+                <p class="miniCard__text">Responsive design and smooth user interactions.</p>
+              </div>
+              <div class="miniCard">
+                <p class="miniCard__kpi">Reliable</p>
+                <p class="miniCard__text">Focused on consistency, clarity, and clean implementation.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section container" id="education" aria-label="Education section">
+        <div class="section__head" data-aos="fade-up">
+          <h2 class="section__title">Education</h2>
+          <p class="section__subtitle">Academic journey and performance.</p>
+        </div>
+
+        <div class="timeline" role="list">
+          <div class="timelineItem" role="listitem" data-aos="fade-up" data-aos-delay="50">
+            <div class="timelineItem__dot" aria-hidden="true"></div>
+            <div class="glassCard timelineItem__card">
+              <h3 class="cardTitle">JNTUA College of Engineering, Pulivendula (2023 – 2027)</h3>
+              <p class="muted">B.Tech — Computer Science • CGPA: 8.2/10 (Current up to 6th semester)</p>
+            </div>
+          </div>
+          <div class="timelineItem" role="listitem" data-aos="fade-up" data-aos-delay="90">
+            <div class="timelineItem__dot" aria-hidden="true"></div>
+            <div class="glassCard timelineItem__card">
+              <h3 class="cardTitle">Krishna Chaithanya Junior College, Nellore (2023)</h3>
+              <p class="muted">Intermediate • Score: 96.4%</p>
+            </div>
+          </div>
+          <div class="timelineItem" role="listitem" data-aos="fade-up" data-aos-delay="130">
+            <div class="timelineItem__dot" aria-hidden="true"></div>
+            <div class="glassCard timelineItem__card">
+              <h3 class="cardTitle">S.V.R EM High School, Nellore (2019)</h3>
+              <p class="muted">SSC Board • Score: 9.8/10 CGPA</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section container" id="projects" aria-label="Projects section">
+        <div class="section__head" data-aos="fade-up">
+          <h2 class="section__title">Projects</h2>
+          <p class="section__subtitle">A couple of projects I’m proud of.</p>
+        </div>
+
+        <div class="projectsGrid">
+          <article class="projectCard" data-aos="fade-up" data-aos-delay="50">
+            <div class="projectCard__media" aria-hidden="true">
+              <img src="assets/images/project-food.svg" alt="" />
+            </div>
+            <div class="projectCard__body">
+              <h3 class="projectCard__title">Online Food Ordering System</h3>
+              <p class="projectCard__desc">
+                Reduced ordering inconvenience by building a web solution with cart and payment features. Enhanced user
+                experience with responsive design and smooth order processing.
+              </p>
+              <div class="tags" aria-label="Tech stack tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="projectCard__actions">
+                <a class="btn btn--small btn--ghost" href="https://github.com/Bellamkondakavya" target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+                <a class="btn btn--small btn--primary" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="projectCard" data-aos="fade-up" data-aos-delay="120">
+            <div class="projectCard__media" aria-hidden="true">
+              <img src="assets/images/project-tip.svg" alt="" />
+            </div>
+            <div class="projectCard__body">
+              <h3 class="projectCard__title">Tip Calculator</h3>
+              <p class="projectCard__desc">
+                A Python-based application used to calculate tip amounts based on the bill total and selected percentage.
+                It helps users quickly split bills and determine the final payable amount.
+              </p>
+              <div class="tags" aria-label="Tech stack tags">
+                <span class="tag">Python</span>
+                <span class="tag">CLI</span>
+              </div>
+              <div class="projectCard__actions">
+                <a class="btn btn--small btn--ghost" href="https://github.com/Bellamkondakavya" target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+                <a class="btn btn--small btn--primary" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section container" id="experience" aria-label="Experience section">
+        <div class="section__head" data-aos="fade-up">
+          <h2 class="section__title">Experience</h2>
+          <p class="section__subtitle">Hands-on exposure through academic work.</p>
+        </div>
+
+        <div class="skillsGrid">
+          <article class="glassCard" data-aos="fade-up" data-aos-delay="60">
+            <h3 class="cardTitle">Academic Projects (Web-Based Solutions)</h3>
+            <p class="muted">
+              Practical exposure through academic projects, with experience designing responsive interfaces and building
+              solutions that improve usability and workflow.
+            </p>
+            <div class="aboutBadges">
+              <span class="badge">Responsive UI</span>
+              <span class="badge">Smooth UX</span>
+              <span class="badge">Problem Solving</span>
+            </div>
+          </article>
+
+          <article class="glassCard" data-aos="fade-up" data-aos-delay="120">
+            <h3 class="cardTitle">Strengths</h3>
+            <p class="muted">
+              Committed to learning from real-world environments, embracing challenges, and contributing to
+              organizational success through consistent effort and collaboration.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Certifications & Achievements -->
+      <section class="section container" id="certifications" aria-label="Certifications and achievements section">
+        <div class="section__head" data-aos="fade-up">
+          <h2 class="section__title">Certifications & Achievements</h2>
+          <p class="section__subtitle">Milestones that shaped my journey.</p>
+        </div>
+
+        <div class="timeline" role="list">
+          <div class="timelineItem" role="listitem" data-aos="fade-up" data-aos-delay="50">
+            <div class="timelineItem__dot" aria-hidden="true"></div>
+            <div class="glassCard timelineItem__card">
+              <h3 class="cardTitle">NPTEL — Artificial Intelligence</h3>
+              <p class="muted">Completed NPTEL Certification in Artificial Intelligence with an aggregate score of 78%.</p>
+            </div>
+          </div>
+          <div class="timelineItem" role="listitem" data-aos="fade-up" data-aos-delay="80">
+            <div class="timelineItem__dot" aria-hidden="true"></div>
+            <div class="glassCard timelineItem__card">
+              <h3 class="cardTitle">edX — Python Programming</h3>
+              <p class="muted">Python Programming Certification.</p>
+            </div>
+          </div>
+          <div class="timelineItem" role="listitem" data-aos="fade-up" data-aos-delay="110">
+            <div class="timelineItem__dot" aria-hidden="true"></div>
+            <div class="glassCard timelineItem__card">
+              <h3 class="cardTitle">edX — RPFWeb</h3>
+              <p class="muted">Introduction to Web Development.</p>
+            </div>
+          </div>
+          <div class="timelineItem" role="listitem" data-aos="fade-up" data-aos-delay="140">
+            <div class="timelineItem__dot" aria-hidden="true"></div>
+            <div class="glassCard timelineItem__card">
+              <h3 class="cardTitle">Data Analysis & Visualization</h3>
+              <p class="muted">Certified in Data Analysis and Visualization Fundamentals.</p>
+            </div>
+          </div>
+          <div class="timelineItem" role="listitem" data-aos="fade-up" data-aos-delay="170">
+            <div class="timelineItem__dot" aria-hidden="true"></div>
+            <div class="glassCard timelineItem__card">
+              <h3 class="cardTitle">Event Coordinator</h3>
+              <p class="muted">Event Coordinator for college cultural activities.</p>
+            </div>
+          </div>
+          <div class="timelineItem" role="listitem" data-aos="fade-up" data-aos-delay="200">
+            <div class="timelineItem__dot" aria-hidden="true"></div>
+            <div class="glassCard timelineItem__card">
+              <h3 class="cardTitle">Sports</h3>
+              <p class="muted">First Place in Volleyball • Runner Up in Handball.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume -->
+      <section class="section container" id="resume" aria-label="Resume section">
+        <div class="section__head" data-aos="fade-up">
+          <h2 class="section__title">Resume</h2>
+          <p class="section__subtitle">A quick preview + download.</p>
+        </div>
+
+        <div class="resumeGrid">
+          <div class="glassCard resumeCard" data-aos="fade-up" data-aos-delay="60">
+            <div class="resumeCard__head">
+              <h3 class="cardTitle">Bellamkonda Kavya — Resume</h3>
+              <p class="muted">PDF resume (download or preview below).</p>
+            </div>
+            <div class="resumeCard__actions">
+              <a
+                class="btn btn--primary resume-download"
+                href="assets/resume/Bellamkonda_Kavya_Resume.pdf"
+                download="Bellamkonda_Kavya_Resume.pdf"
+              >
+                Download Resume
+              </a>
+              <a class="btn btn--ghost" href="assets/resume/Bellamkonda_Kavya_Resume.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+            </div>
+          </div>
+
+          <div class="glassCard resumePreview" data-aos="fade-up" data-aos-delay="120" aria-label="Resume preview">
+            <iframe
+              title="Resume preview"
+              src="assets/resume/Bellamkonda_Kavya_Resume.pdf#view=FitH"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section container" id="contact" aria-label="Contact section">
+        <div class="section__head" data-aos="fade-up">
+          <h2 class="section__title">Contact</h2>
+          <p class="section__subtitle">Let’s build something great together.</p>
+        </div>
+
+        <div class="contactGrid">
+          <form class="glassCard contactForm" id="contactForm" data-aos="fade-up" data-aos-delay="60">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Write your message…" required></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit">
+              <span>Send</span>
+              <span class="btn__glow" aria-hidden="true"></span>
+            </button>
+            <p class="formNote" id="formNote" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="glassCard contactInfo" data-aos="fade-up" data-aos-delay="120">
+            <h3 class="cardTitle">Details</h3>
+            <ul class="infoList">
+              <li>
+                <span class="infoList__k">Email</span>
+                <a class="infoList__v" href="mailto:bellamkondakavya51@gmail.com">bellamkondakavya51@gmail.com</a>
+              </li>
+              <li>
+                <span class="infoList__k">Phone</span>
+                <a class="infoList__v" href="tel:+918712104187">+91 8712104187</a>
+              </li>
+              <li>
+                <span class="infoList__k">Location</span>
+                <span class="infoList__v">Bangalore</span>
+              </li>
+            </ul>
+
+            <div class="contactInfo__cta">
+              <a class="btn btn--ghost btn--small" href="#projects">See Projects</a>
+              <a class="btn btn--ghost btn--small" href="mailto:bellamkondakavya51@gmail.com">Email Me</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__copy">© <span id="year"></span> Kavya Bellamkonda. All rights reserved.</p>
+        <div class="footer__social" aria-label="Footer social links">
+          <a href="https://github.com/Bellamkondakavya" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/bellamkonda-kavya-9893792b7" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
+          <a href="mailto:bellamkondakavya51@gmail.com" aria-label="Email">Email</a>
+          <a href="tel:+918712104187" aria-label="Phone">Phone</a>
+        </div>
+        <p class="footer__made">Made with <span aria-hidden="true">❤</span> by Kavya</p>
+      </div>
+    </footer>
+
+    <div id="downloadToast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+
+    <!-- Scroll-to-top -->
+    <button class="toTop" id="toTop" type="button" aria-label="Scroll to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.55" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#f43f5e"/>
+    </linearGradient>
+    <radialGradient id="r" cx="30%" cy="25%" r="70%">
+      <stop offset="0" stop-color="rgba(34,211,238,0.40)"/>
+      <stop offset="0.55" stop-color="rgba(124,58,237,0.22)"/>
+      <stop offset="1" stop-color="rgba(244,63,94,0.00)"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" rx="120" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)" stroke-width="6"/>
+  <circle cx="210" cy="180" r="220" fill="url(#r)"/>
+  <circle cx="420" cy="420" r="220" fill="url(#r)" opacity="0.9"/>
+  <circle cx="300" cy="255" r="86" fill="rgba(255,255,255,0.14)"/>
+  <path d="M145 510c34-108 276-108 310 0" fill="rgba(255,255,255,0.14)"/>
+  <text x="300" y="560" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="24" fill="rgba(234,240,255,0.7)">Profile Photo</text>
+  <rect x="90" y="86" width="420" height="420" rx="120" fill="none" stroke="url(#g)" stroke-width="5" opacity="0.65"/>
+</svg>
